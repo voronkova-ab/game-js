@@ -1,10 +1,128 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="utf-8">
     <title>Игра</title>
+    <link href="style.css" rel="stylesheet">
   </head>
+
   <body>
-    <script src="js/scripts.js"></script>
+    <div class="preloader"></div>
+    <h1 class="title">Викторина про жирафов</h1>
+    <p id="counterAnswers"></p>
+    <button class="start-btn">
+      Начать игру
+    </button>
+    <div class="container">
+      <div class="question">
+        <h2 class="question__title">
+          Где обитает жираф?
+        </h2>
+        <div class="question__answers">
+          <input id="ans1-1" type="radio" value="В Индии" class="radio">
+          <label for="ans1-1" class="answer">
+            В Индии
+          </label>
+          <input id="ans1-2" type="radio" value="В Америке" class="radio">
+          <label for="ans1-2" class="answer">
+            В Америке
+          </label>
+          <input id="ans1-3" type="radio" value="В Африке" class="radio">
+          <label for="ans1-3" class="answer">
+            В Африке
+          </label>
+          <input id="ans1-4" type="radio" value="В Австралии" class="radio">
+          <label for="ans1-4" class="answer">
+            В Австралии
+          </label>
+        </div>
+      </div>
+      <div class="question">
+        <h2 class="question__title">
+          Как быстро может бегать жираф?
+        </h2>
+        <div class="question__answers">
+          <input id="ans2-1" type="radio" value="70км/ч" class="radio">
+          <label for="ans2-1" class="answer">
+            70 км/ч
+          </label>
+          <input id="ans2-2" type="radio" value="55 км/ч" class="radio">
+          <label for="ans2-2" class="answer">
+            55 км/ч
+          </label>
+          <input id="ans2-3" type="radio" value="90 км/ч" class="radio">
+          <label for="ans2-3" class="answer">
+            30 км/ч
+          </label>
+          <input id="ans2-4" type="radio" value="100 км/ч" class="radio">
+          <label for="ans2-4" class="answer">
+            100 км/ч
+          </label>
+        </div>
+      </div>
+      <div class="question">
+        <h2 class="question__title">
+          Сколько подвидов жирафа существует?
+        </h2>
+        <div class="question__answers">
+          <input id="ans3-1" type="radio" value="9" class="radio">
+          <label for="ans3-1" class="answer">
+            9
+          </label>
+          <input id="ans3-2" type="radio" value="7" class="radio">
+          <label for="ans3-2" class="answer">
+            7
+          </label>
+          <input id="ans3-3" type="radio" value="10" class="radio">
+          <label for="ans3-3" class="answer">
+            10
+          </label>
+          <input id="ans3-4" type="radio" value="17" class="radio">
+          <label for="ans3-4" class="answer">
+            17
+          </label>
+        </div>
+      </div>
+      <div class="question">
+        <h2 class="question__title">
+          Сколько живет жираф?
+        </h2>
+        <div class="question__answers">
+          <input id="ans4-1" type="radio" value="50 лет" class="radio">
+          <label for="ans4-1" class="answer">
+            50 лет
+          </label>
+          <input id="ans4-2" type="radio" value="90 лет" class="radio">
+          <label for="ans4-2" class="answer">
+            90 лет
+          </label>
+          <input id="ans4-3" type="radio" value="30 лет" class="radio">
+          <label for="ans4-3" class="answer">
+            30 лет
+          </label>
+          <input id="ans4-4" type="radio" value="70 лет" class="radio">
+          <label for="ans4-4" class="answer">
+            70 лет
+          </label>
+        </div>
+      </div>
+      <form action="#" class="form question">
+        <input class="form__name" type="text" name="name" placeHolder="Ваше имя" autocomplete="off">
+        <button class="form__btn" type="button">Отправить</button>
+      </form>
+      <button class="btn btn_prev none" id="previous">
+        previous
+      </button>
+      <button class="btn btn_next none" id="next">
+        next
+      </button>
+      <button class="restart none">
+        Рестарт
+      </button>
+    </div>
+
+    <script src="scripts.js"></script>
   </body>
+
 </html>
