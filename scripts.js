@@ -41,7 +41,10 @@ class Quiz {
         this.insertText(this.questionRequest, this.allAnswersRequest);
         json.onload = this.preloader.classList.add('none');
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        console.log(err);
+        this.preloader.classList.add('none');
+      });
   }
 
   insertText(arrQuestion, arrAnswer) {
@@ -62,7 +65,7 @@ class Quiz {
     Array.from(this.container.querySelectorAll('.question .question__answers'))
       .forEach(answers => {
         answers.addEventListener("click", this.checkResultBind);
-      })
+      });
   }
 
   assignHandlerButton() {
@@ -75,7 +78,7 @@ class Quiz {
 
   checkResult(event) {
     let target = event.target;
-    if (target.tagName != 'LABEL') return;
+    if (target.tagName !== 'LABEL') return;
 
     this.disableButton();
 
@@ -106,7 +109,6 @@ class Quiz {
     this.next.classList.remove('none');
     this.previous.classList.remove('none');
     this.switchQuestion(this.countSlide);
-    console.log(`start ${this.countSlide + 1}`);
   }
 
   switchQuestion(switchedSlide) {
@@ -120,6 +122,8 @@ class Quiz {
         this.switchNextQuestion();
       }, 10000);
     }
+
+    clearTimeout(this.timerCheckQuestion);
   }
 
   switchNextQuestion() {
@@ -137,8 +141,6 @@ class Quiz {
 
     this.switchQuestion(this.countSlide + 1);
     this.countSlide++;
-    console.log(`next ${this.countSlide + 1}`);
-    clearTimeout(this.timerCheckQuestion);
   }
 
   switchPreviousQuestion() {
@@ -146,13 +148,12 @@ class Quiz {
       return;
     }
 
-    if (this.countSlide != 2) {
+    if (this.countSlide !== 2) {
       this.next.textContent = 'next';
     }
 
     this.switchQuestion(this.countSlide - 1);
     this.countSlide--;
-    console.log(this.countSlide + 1);
   }
 
   eventButtonName() {
@@ -205,7 +206,7 @@ let animalQuiz = {
   correctRequestAnswers: [],
   questionRequest: [],
   allAnswersRequest: [],
-  requestLink: 'https://opentdb.com/api.php?amount=4&category=27&type=multiple',
+  requestLink: 'ttps://opentdb.com/api.php?amount=4&category=27&type=multiple',
   correctDefaultAnswers: ['В Африке', '55 км/ч', '9', '30 лет'],
   start: document.querySelector('.start-btn'),
   next: document.getElementById('next'),

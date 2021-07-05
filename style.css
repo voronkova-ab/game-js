@@ -13,7 +13,7 @@ body {
   background: #fff url('walk.gif') no-repeat center;
 }
 
-#counterAnswers {
+.counter-answers {
   margin-bottom: 95px;
 }
 
@@ -80,9 +80,9 @@ body {
   left: 0;
   width: 100px;
   background: #abcdef;
-  padding: 115px 0px;
+  padding: 115px 0;
   border: none;
-  color: #003366;
+  color: #036;
 }
 
 .btn_next {
